@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
-import { Task } from './interfaces/Task';
+import { isTask, Task } from './interfaces/Task';
 
 const App: React.FC = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const getTasksFromLocalStorage = () => {
+    const tasks = localStorage.getItem('tasks');
+    if (tasks) {
+      // check if we have objects of type Task in local storage
+      try {
+        const parsedTasks = JSON.parse(tasks) as Task[];
+        if (parsedTasks.length > 0 && parsedTasks.every(task => isTask(task))) {
+          return parsedTasks;
+        }
+      } catch (error) {
+        console.error('Error parsing tasks from local storage:', error);
+      }
+    }
+    return [];
+  }
+  const [tasks, setTasks] = useState<Task[]>(getTasksFromLocalStorage());
   const [filter, setFilter] = useState<string>('All');
   const [sortOrder, setSortOrder] = useState<string>('asc');
 
   // Functions to handle adding, toggling, deleting, and editing tasks
   const handleAddTask = (task: Task) => {
     setTasks([...tasks, task]);
+    // Save tasks to local storage
+    localStorage.setItem('tasks', JSON.stringify([...tasks, task]));
   };
 
   const handleToggleComplete = (id: string) => {

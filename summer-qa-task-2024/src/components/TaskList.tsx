@@ -86,7 +86,12 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onToggleComplete, onDeleteTa
                                 Save
                             </button>
                             <button
-                                onClick={() => setIsEditing(null)}
+                                onClick={() => {
+                                    setIsEditing(null)
+                                    if (!task.completed) {
+                                        onToggleComplete(task.id)
+                                    }
+                                }}
                                 className="py-1 px-2 bg-gray-500 text-white rounded-md ml-2 cursor-text"
                             >
                                 Cancel

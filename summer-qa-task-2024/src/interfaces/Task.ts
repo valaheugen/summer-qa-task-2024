@@ -9,3 +9,16 @@ export interface Task {
   importance: Importance; // Importance level of the task
   label: Label; // Label to categorize the task
 }
+
+// Type guard for Task
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const isTask = (obj: any): obj is Task => {
+  return (
+    typeof obj.id === "string" &&
+    typeof obj.title === "string" &&
+    typeof obj.description === "string" &&
+    typeof obj.completed === "boolean" &&
+    ["Low", "Medium", "High"].includes(obj.importance) &&
+    ["Work", "Social", "Home", "Hobby"].includes(obj.label)
+  );
+};
