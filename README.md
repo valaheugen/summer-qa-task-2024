@@ -37,16 +37,18 @@ Other requirements are up to the candidate's interpretation - since a lot of the
 
 ## Homework
 
-Since the position in itself includes both manual and automated testing - we expect candidates to be proficient in both. The homework is divided into two parts:
+The position is highly focused on automation ( around 90% ), but sometimes manual testing is inevitable - especially when trying to move things along and validate small fixes for deploys - that's why we expect candidates to be proficient in both. The homework is divided into two parts:
 
-1. Manual Testing and Bug Reporting
+1. Exploratory Testing and Bug Reporting
 2. Automated Testing
 
-### Manual Testing and Bug Reporting
+### Exploratory Testing and Bug Reporting
 
 - The candidate is expected to test the application and report any bugs found.
 - We encourage to look for both functional and visual (UX) bugs.
-- The candidate should provide a report of the bugs found. You will be evaluated on the quality of the report and the bugs found.\n
+- The candidate should provide a report of the bugs found.
+
+You will be evaluated on the quality of the report and the bugs found.
 
 ### Automated Testing
 
