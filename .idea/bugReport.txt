@@ -1,0 +1,346 @@
+NOTE:
+ALL BUGS SHOULD HAVE SCREENSHOTS, AS A PROOF, BUT DUE TO LIMITATIONS, I SKIPPED THEM.
+
+##BugID: 001
+Title: Task Item can be added without Title
+Description: Even if the title is required, the task item can be added without a title.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Leave the title field empty
+3. Click on the Add Task button
+Expected:
+User should not be able to add task w/o title. An error message should be displayed: "Title is required!"
+Actual:
+Even if the title is required, the task item can be added without a title.
+Item is displayed in the task list
+Severity: High
+Priority: High
+
+##BugID: 002
+Title: Required elements are not marked with asteriks
+Description: Title and Importance fields, being required, are not mark as required with an asteriks.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Inspect Title and Importance fields
+Expected:
+Title and Importance fields, being required, ARE mark as required with an asteriks.
+Actual:
+Title and Importance fields, being required, ARE NOT mark as required with an asteriks.
+Severity: Medium
+Priority: High
+
+##BugID: 003
+Title: Required elements are not marked with asteriks
+Description: Title and Importance fields, being required, are not mark as required with an asteriks.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Inspect Title and Importance fields
+Expected:
+Title and Importance fields, being required, ARE mark as required with an asteriks.
+Actual:
+Title and Importance fields, being required, ARE NOT mark as required with an asteriks.
+Severity: Medium
+Priority: High
+
+
+##BugID: 004
+Title: At Task creation, Completeness is not set to false by default
+Description: When a user create an task item, the Completeness is set to TRUE by default
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Add a title to the Task
+3. Click on Add Task button
+Expected:
+At Task creation, Completeness is set to FALSE by default (Uncomplete)
+Actual:
+At Task creation, Completeness should be set to TRUE by default (Complete)
+Severity: High
+Priority: High
+
+##BugID: 005
+Title: If item is edited, and page is refreshed, edited data is not saved
+Description: When a user edits an item and saved, and if, user refreshes the page, all saved data a removed, and user can see old data in the task item.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+Preconditions:
+User should have at least one item task
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Click on Edit button from item task
+3. Edit all fields
+4. Click on Save button
+5. Refresh the page
+Expected:
+After page refresh, all data saved at step 4, should be displayed for user, not old data.
+Actual:
+When a user edits an item and saved, and if, user refreshes the page, all saved data a removed, and user can see old data in the task item.
+Severity: High
+Priority: High
+
+##BugID: 006
+Title: Even if description is added, in edit mode, description is empty
+Description: If user opens a item task with description added in edit mode, the description field, in edit mode, is empty.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+Preconditions:
+User should have at least one item task with decriptio added
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Click on Edit button from item task
+Expected:
+If descrioption is added in initial item, it should be displayed when Edit mode is opened.
+Actual:
+Even if description is in item task, in the edit mode, descrioption is empty
+Severity: Medium
+Priority: Medium
+
+##BugID: 007
+Title: Sorting option is not working properly for items list
+Description: When user selects one of proposed sorting options, task items are not sorted properly
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+Preconditions:
+User should have at least one item for each type of importance (High, Medium, Low)
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Click on the Sort by... Dropdown
+3. Select Sort by and select Sort by Importance (Ascending)
+4. Select Sort by Dropdown and select Sort by Importance (Descending)
+Expected:
+Step 3: Items should be sorted from Low to High Importance
+Step 4: Items should be sorted from High to Low Importance
+Actual:
+Step 3: Items are sorted like: High, Low, Medium Importance
+Step 4: Items are sorted like: Medium, Low, High Importance
+Severity: Medium
+Priority: High
+
+##BugID: 008
+Title: After page refresh, sorting, and filtering options are not saved
+Description: If user selects a sort and filter option, and refresh the page, the values are returned to default.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+Preconditions:
+User should have at least one item for each type of importance (High, Medium, Low) and for each label (Work, Home, Hobby,Social)
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Select Sort by Dropdown and select Sort by Importance (Descending)
+3. Select Work label from filter dropdown
+4. Refresh the page
+Expected:
+After page refresh, the filter and sort options are saved, and items are displayed accordingly.
+Actual:
+If user selects a sort and filter option, and refresh the page, the values are returned to default.
+
+Severity: Low
+Priority: Medium
+
+##BugID: 009
+Title: Deleted items are displayed again, after page refresh
+Description: If user deletes one or all items from the list, and refresh the page, the all removed items are displayed again.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+Preconditions:
+User should have at least one item in the list
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Click on the Delete button
+3. Refresh the page
+Expected:
+If user delete an item or several items, after page refresh, removed item should not be displayed again in the list.
+Actual:
+If user deletes one or all items from the list, and refresh the page, the all removed items are displayed again.
+Severity: High
+Priority: High
+
+##BugID: 009
+Title: No info message for "no results" filters
+Description: If user selects a filter option, and returned result section is empty, user sees and empty list instead of an informative message about no results.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Create a task with Work label
+3. Select for filter, Hobby label
+Expected:
+If a user selects a filter with 'no results', user should see an informative message: "Your list is empty"
+Actual:
+If user selects a filter option, and returned result section is empty, user sees and empty list instead of an informative message about no results.
+Severity: Medium
+Priority: Medium
+
+##BugID: 010
+Title: The "Add Task" is enabled with not filled required fields
+Description: If a user tries to add a task, the Add Task button should be disabled till the required fields are completed.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Leave title empty field
+Expected:
+the Add Task button should be disabled till the required fields are completed.
+Actual:
+the Add Task button is enabled and clickable even if the required fields are not filled.
+Severity: Medium
+Priority: Low
+
+##BugID: 011
+Title: Number of added items cards has not a limit
+Description: The user can add as many cards as he wants, without limitations in the number of cards.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Start to add items cards
+Expected:
+User should be able to add not more than 100 cards (TBD Requirments for improvment)
+Actual:
+The user can add as many cards as he wants, without limitations in the number of cards.
+Severity: Low
+Priority: Medium
+
+##BugID: 012
+Title: [UI] Long titles and descrioption are not truncated and are displayed out of item form.
+Description: If user introduces a very long title (aprox >50 chars) and long description (aprox >200 chars), the text is displayed out of item form.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Create an item task with:
+- title: MediumMedium aMediumMediumMediumMediumMediumMediumMedium aMediumMediumMediumMediumMediumMediumMedium aMediumMediumMediumMediumMediumMediumMedium aMediumMediumMediumMediumMediumMediumMedium 
+- Description: MediumMedium aMediumMediumMediumMediumMediumMediumMedium aMediumMediumMediumMediumMediumMediumMedium aMediumMediumMediumMediumMediumMediumMedium aMediumMediumMediumMediumMediumaMediumMediumMediumMediumMediumMediumMedium aMediumMediumMediumMediumMedium
+3. Click on Add Task butoon
+Expected:
+Long title and description should be handled, add be displayed inside of the item's form.
+Actual:
+If user introduces a very long title (aprox >50 chars) and long description (aprox >200 chars), the text is displayed out of item form.
+Severity: Low
+Priority: High
+
+##BugID: 013
+Title: [UI Mobile/Tablets] Dropdown, in open mode, overlay the selector.
+Description: When a user uses mobile/tablet view, and open an dropdown, it is displayed and overlays the main selector element.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- iPhone XR
+- Google Pixel 7XL
+
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Open any dropdown
+Expected:
+Dropdown's options should be displayed under main selector.
+Actual:
+When a user uses mobile/tablet view, and open an dropdown, it is displayed and overlays the main selector element.
+Severity: Low
+Priority: Low
+
+##BugID: 014
+Title: Completeness status is changed during Edit flow after Cancel button
+Description: If a user edits an item task, after click on Cancel button, edit form is closed, but Completeness status is changed.
+Reproducible rate: 10/10
+Machine: 
+MacBook Pro Apple M1 ProApple M1 Pro macOS: Sonoma 14.3 (23D56)
+Browser:
+- Chrome: Version 127.0.6533.99 (Official Build) (arm64)
+- Safari: Version 17.3 (19617.2.4.11.8)
+- Firefox: Version 129.0.1 (64-bit)
+
+Preconditions:
+User should have at least one item task
+Steps to Reproduce:
+1. Go to the Task Manager application
+2. Click on edit button
+3. Click on Cancel button
+Expected:
+Edit form is closed, and data is not changed, including Completeness status
+Actual:
+If a user edits an item task, after click on Cancel button, edit form is closed, but Completeness status is changed.
+Severity: Medium
+Priority: Medium
+
+
+
+
+
+
+
